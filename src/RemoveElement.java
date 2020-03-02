@@ -19,7 +19,7 @@ public class RemoveElement {
         int[] input = new int[]{2,3,2};
         int[] input2 = new int[]{0,2,1,2,2,3,4,4,5,3,2};
         Assert.assertArrayEquals(new int[]{3}, Arrays.copyOfRange(input, 0, removeElement(input,2)));
-        Assert.assertArrayEquals(new int[]{0,1,3,4,4,5,3}, Arrays.copyOfRange(input2, 0, removeElement(input2,2)));
+        Assert.assertArrayEquals(new int[]{0,1,3,4,4,5,3}, Arrays.copyOfRange(input2, 0, removeElement2(input2,2)));
     }
 
     public static int removeElement(int[] nums, int val){
@@ -54,12 +54,12 @@ public class RemoveElement {
         return len-t;
     }
 
-    public static int removeElemet2(int[] nums, int val){
+    public static int removeElement2(int[] nums, int val){
         int len = nums.length;
         int i = 0;
         for(int j = 0; j<len; j++){
             if(nums[j]!=val){
-                nums[j] = nums[i];
+                nums[i] = nums[j];
                 i++;
             }
         }
