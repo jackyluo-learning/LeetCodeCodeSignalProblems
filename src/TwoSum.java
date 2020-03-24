@@ -17,10 +17,14 @@ public class TwoSum {
 
     @Test
     public void test(){
-        Assert.assertEquals(Arrays.toString(new int[]{3, 4}), Arrays.toString(twoSum(new int[]{2,4,2,5,6}, 11)));
+        Assert.assertEquals(Arrays.toString(new int[]{3, 4}), Arrays.toString(twoSum1(new int[]{2,4,2,5,6}, 11)));
+        Assert.assertEquals(Arrays.toString(new int[]{3, 4}), Arrays.toString(twoSum2(new int[]{2,4,6,23,56}, 29)));
     }
 
-    public static int[] twoSum(int[] nums, int target){
+    public int[] twoSum1(int[] nums, int target){
+        /*
+        if the array is not sorted
+         */
         HashMap<Integer, Integer> numbers = new HashMap<>();
         int[] result = new int[2];
         int len = nums.length;
@@ -33,6 +37,26 @@ public class TwoSum {
             }
             numbers.put(nums[i], i);
         }
+        return result;
+    }
+
+    public int[] twoSum2(int[] nums, int target){
+        /*
+        if the array is sorted in ascend order
+         */
+        int len = nums.length;
+        int[] result = new int[2];
+        if (nums == null || len < 2) return result;
+        int start = 0;
+        int end = len - 1;
+        while (start < end){
+            int sum = nums[start] + nums[end];
+            if(sum == target) break;
+            else if (sum < target) start++;
+            else end --;
+        }
+        result[0] = start + 1;
+        result[1] = end + 1;
         return result;
     }
 }

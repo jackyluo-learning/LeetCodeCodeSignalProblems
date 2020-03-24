@@ -14,7 +14,6 @@ public class IndexOfImplementation {
             if (iH + lenNeedle > lenHay) return -1;
             for (int iN = 0; iN < lenNeedle; iN++) {
                 if (haystack.charAt(iH + iN) != needle.charAt(iN)) {
-                    System.out.println(iN + " " + iH + " 2");
                     break;
                 }
                 if (iN == lenNeedle - 1) {

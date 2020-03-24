@@ -1,7 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class RemoveDuplicates {
 
@@ -11,6 +11,9 @@ public class RemoveDuplicates {
         int[] input2 = {0,0,1,1,2,2,2,3,3,4,4,4};
         Assert.assertArrayEquals(new int[]{1}, Arrays.copyOfRange(input1, 0, removeDuplicates1(input1)));
         Assert.assertArrayEquals(new int[]{0,1,2,3,4}, Arrays.copyOfRange(input2, 0, removeDuplicates2(input2)));
+        HashMap<Character, Integer> countMap = new HashMap<>();
+        Set<Map.Entry<Character, Integer>> entries = countMap.entrySet();
+
     }
 
 
