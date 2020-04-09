@@ -7,8 +7,6 @@ import java.util.SplittableRandom;
 
 public class AllLongestString {
     String[] result;
-    @Rule
-    public MyJUnitStopWatch stopwatch = new MyJUnitStopWatch();
 
     @Before
     public void before() {

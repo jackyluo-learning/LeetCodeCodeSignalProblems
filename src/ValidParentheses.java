@@ -14,9 +14,6 @@ public class ValidParentheses {
     Note that an empty string is also considered valid.
      */
 
-    @Rule
-    public MyJUnitStopWatch stopwatch = new MyJUnitStopWatch();
-
 
     @Test
     public void test() {

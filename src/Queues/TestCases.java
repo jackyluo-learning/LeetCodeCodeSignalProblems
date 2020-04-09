@@ -26,6 +26,7 @@ public class TestCases {
         stack.push(3);
         System.out.println(stack.top());
         System.out.println(stack.pop());
+        System.out.println(stack.pop());
         System.out.println(stack.top());
         stack.push(4);
         System.out.println(stack.top());

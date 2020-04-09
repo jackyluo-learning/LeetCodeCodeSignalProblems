@@ -4,8 +4,6 @@ import java.io.PrintStream;
 
 public class isPalindrome {
     private int x;
-    @Rule
-    public MyJUnitStopWatch stopwatch = new MyJUnitStopWatch();
 
 
     @Before

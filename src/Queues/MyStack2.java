@@ -26,6 +26,7 @@ public class MyStack2 {
                 top = tmpTop;
                 return tmp;
             }
+            queue.add(tmp);
             tmpTop = tmp;
         }
         return -1;
