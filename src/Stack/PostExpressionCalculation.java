@@ -15,25 +15,16 @@ public class PostExpressionCalculation {
                 storge.push(Character.getNumericValue(exp.charAt(i)));
             }
             else{
-                char op = Character.valueOf(exp.charAt(i));
+                char op = exp.charAt(i);
                 int val1 = storge.pop();
                 int val2 = storge.pop();
-                switch (op){
-                    case '*':
-                        result = val2 * val1;
-                        break;
-                    case '+':
-                        result = val2 + val1;
-                        break;
-                    case '-':
-                        result = val2 - val1;
-                        break;
-                    case '/':
-                        result = val2 / val1;
-                        break;
-                    default:
-                        throw new IllegalStateException("Unexpected value: " + op);
-                }
+                result = switch (op) {
+                    case '*' -> val2 * val1;
+                    case '+' -> val2 + val1;
+                    case '-' -> val2 - val1;
+                    case '/' -> val2 / val1;
+                    default -> throw new IllegalStateException("Unexpected value: " + op);
+                };
                 storge.push(result);
             }
         }
