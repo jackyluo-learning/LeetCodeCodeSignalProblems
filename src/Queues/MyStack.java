@@ -43,7 +43,7 @@ class MyStack {
     }
 }
 
-/**
+/*
  * Your Queues.MyStack object will be instantiated and called as such:
  * Queues.MyStack obj = new Queues.MyStack();
  * obj.push(x);

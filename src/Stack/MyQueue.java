@@ -23,5 +23,4 @@ public class MyQueue<T> {
         }
         return stack2.pop();
     }
-
 }

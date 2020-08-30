@@ -5,7 +5,7 @@ import java.util.Stack;
 public class SortElementInStack {
     public static Stack<Integer> sortStack(Stack<Integer> stack){
         Stack<Integer> result = new Stack<>();
-        int temp = 0;
+        int temp;
         while(!stack.isEmpty()){
             temp = stack.pop();
             while(!result.isEmpty() && result.peek()>=temp){
