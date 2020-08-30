@@ -9,13 +9,12 @@ public class SecondSmallest {
         int first = Integer.MAX_VALUE;
         int second = Integer.MAX_VALUE;
         int length = a.length;
-        for (int i = 0; i < length; i++) {
-            if (a[i] < first){
+        for (int j : a) {
+            if (j < first) {
                 second = first;
-                first = a[i];
-            }
-            else if (a[i] < second && a[i] > first){
-                second = a[i];
+                first = j;
+            } else if (j < second && j > first) {
+                second = j;
             }
         }
         return second;
