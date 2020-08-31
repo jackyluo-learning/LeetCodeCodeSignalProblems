@@ -8,16 +8,16 @@ import java.util.Stack;
 public class PostExpressionCalculation {
     public int cal(String exp){
         int len = exp.length();
-        Stack<Integer> storge = new Stack();
+        Stack<Integer> storage = new Stack();
         int result;
         for (int i = 0; i < len; i++) {
             if (Character.isDigit(exp.charAt(i))){
-                storge.push(Character.getNumericValue(exp.charAt(i)));
+                storage.push(Character.getNumericValue(exp.charAt(i)));
             }
             else{
                 char op = exp.charAt(i);
-                int val1 = storge.pop();
-                int val2 = storge.pop();
+                int val1 = storage.pop();
+                int val2 = storage.pop();
                 result = switch (op) {
                     case '*' -> val2 * val1;
                     case '+' -> val2 + val1;
@@ -25,10 +25,10 @@ public class PostExpressionCalculation {
                     case '/' -> val2 / val1;
                     default -> throw new IllegalStateException("Unexpected value: " + op);
                 };
-                storge.push(result);
+                storage.push(result);
             }
         }
-        return storge.pop();
+        return storage.pop();
     }
 
     @Test
