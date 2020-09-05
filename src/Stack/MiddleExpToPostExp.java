@@ -27,6 +27,9 @@ public class MiddleExpToPostExp {
                 storage.push(component);
             } else return "Null";
         }
+        while (!storage.isEmpty()){
+            result.append(storage.pop());
+        }
         return result.toString();
     }
 
@@ -38,7 +41,12 @@ public class MiddleExpToPostExp {
         operationLevel.put('-', 1);
         operationLevel.put('*', 2);
         operationLevel.put('/', 2);
-        return operationLevel.get(left) <= operationLevel.get(right);
+        try {
+            return operationLevel.get(left) <= operationLevel.get(right);
+        }catch (NullPointerException e){
+            System.out.println("This operation can not be found.");
+            return false;
+        }
     }
 
     @Test
