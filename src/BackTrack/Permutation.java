@@ -26,7 +26,8 @@ public class Permutation {
         res = new ArrayList<>();
         path = new ArrayList<>();
         used = new boolean[nums.length];
-        basicBackTrack(nums);
+//        basicBackTrack(nums);
+        backTrack(nums);
         return res;
     }
 
